@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="text_name">Welcome, Marcella !</string>
+    <string name="text_greeting">Let\'s Enjoy A Healthy Meal.</string>
+    <string name="text_menu_banner">Chicken Papaer Soup</string>
+    <string name="text_discount_banner">Most Favourite Menu Discount 25%</string>
+    <string name="text_menu">Chicken Paper Soup</string>
+    <string name="text_discount_desc">Discount up to 25%</string>
+    <string name="text_button_banner">Order Now</string>
+    <string name="text_catagories1">SALAD</string>
+    <string name="text_catagories2">OATMEAL</string>
+    <string name="text_catagories3">SOUP</string>
+</resources>
