@@ -11,7 +11,10 @@ import com.example.foodapp.databinding.ItemGridMenuBinding
 import com.example.foodapp.databinding.ItemListMenuBinding
 import com.example.foodapp.model.ListMenu
 
-class MenuAdapter(private val listMode: Int = MODE_LIST) : RecyclerView.Adapter<ViewHolder>() {
+class ListMenuAdapter(
+    private val listener: OnItemClickedListener<ListMenu>,
+    private val listMode: Int = MODE_LIST)
+    : RecyclerView.Adapter<ViewHolder>() {
 
     companion object {
         const val MODE_LIST = 0
@@ -31,6 +34,9 @@ class MenuAdapter(private val listMode: Int = MODE_LIST) : RecyclerView.Adapter<
 
         }
     )
+    fun submitData(data: List<ListMenu>){
+        asyncDataDiffer.submitList(data)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return if (listMode == MODE_GRID)
             MenuGridItemViewHolder(
@@ -38,14 +44,14 @@ class MenuAdapter(private val listMode: Int = MODE_LIST) : RecyclerView.Adapter<
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),listener
         ) else {
             MenuListItemViewHolder(
                 ItemListMenuBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
-                )
+                ),listener
             )
         }
     }
@@ -56,4 +62,7 @@ class MenuAdapter(private val listMode: Int = MODE_LIST) : RecyclerView.Adapter<
         if (holder !is ViewHolderBinder<*>) return
         (holder as ViewHolderBinder<ListMenu>).bind(asyncDataDiffer.currentList[position])
     }
-}
+    interface OnItemClickedListener<T>{
+        fun onItemClicked(item: T)
+    }
+    }

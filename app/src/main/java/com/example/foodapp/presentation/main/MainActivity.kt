@@ -3,11 +3,10 @@ package com.example.foodapp.presentation.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.foodapp.CatagoryAdapter
-import com.example.foodapp.presentation.MenuList.adapter.MenuAdapter
+import com.example.foodapp.presentation.MenuList.adapter.ListMenuAdapter
 import com.example.foodapp.R
 import com.example.foodapp.databinding.ActivityMainBinding
 import com.example.foodapp.model.Catagory
-import com.example.foodapp.model.ListMenu
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
     private val catagoryAdapter = CatagoryAdapter()
-    private val listmenuAdapter = MenuAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
