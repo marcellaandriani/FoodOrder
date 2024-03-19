@@ -10,4 +10,6 @@
     <string name="text_catagories1">SALAD</string>
     <string name="text_catagories2">OATMEAL</string>
     <string name="text_catagories3">SOUP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
