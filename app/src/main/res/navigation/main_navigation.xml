@@ -9,14 +9,5 @@
         android:id="@+id/menuListFragment"
         android:name="com.example.foodapp.presentation.MenuList.MenuListFragment"
         android:label="fragment_menu_list"
-        tools:layout="@layout/fragment_menu_list" >
-        <action
-            android:id="@+id/action_menuListFragment_to_menuDetailFragment"
-            app:destination="@id/menuDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/menuDetailFragment"
-        android:name="com.example.foodapp.presentation.MenuDetail.MenuDetailFragment"
-        android:label="fragment_menu_detail"
-        tools:layout="@layout/fragment_menu_detail" />
+        tools:layout="@layout/fragment_menu_list" />
 </navigation>

@@ -1,12 +1,16 @@
 package com.example.foodapp.presentation.MenuList
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.foodapp.DetailActivity
 import com.example.foodapp.R
 import com.example.foodapp.data.datasource.FoodDataSource
 import com.example.foodapp.data.datasource.FoodDataSourceImpl
@@ -26,7 +30,6 @@ class MenuListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         binding = FragmentMenuListBinding.inflate(layoutInflater,container,false)
         return binding.root
     }
@@ -71,6 +74,9 @@ class MenuListFragment : Fragment() {
     }
 
     private fun navigateToDetail(item: ListMenu) {
-        Toast.makeText(requireContext(), item.name  , Toast.LENGTH_SHORT).show()
+        val intent = Intent(requireContext(), DetailActivity::class.java).apply {
+            putExtra(DetailActivity.EXTRA_MENU, item)
+        }
+        startActivity(intent)
     }
 }
