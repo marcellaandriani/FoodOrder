@@ -15,7 +15,7 @@ class MenuGridItemViewHolder (
 
     override fun bind(item: ListMenu) {
         item.let {
-            binding.ivListMenuImage1.load(it.MenuPictUrl){
+            binding.ivListMenuImage1.load(it.menuPictUrl){
                 crossfade(true)
                 error(R.mipmap.ic_launcher)
             }
